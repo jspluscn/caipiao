@@ -28,8 +28,10 @@ class Crawler(object):
             for i in xrange(4):
                 item['period'] = self.parse_list(html.xpath('//*[@id="j-todayNumTable"]//tr[%s]//td[%s]//@rel' % (n+1, (5*i)+2)))
                 item['awardTd'] = self.parse_list(html.xpath('//*[@id="j-todayNumTable"]//tr[%s]//td[%s]/text()' % (n+1, (5*i)+2)))
-                # print item, n
-                # break
+                
+                print item, n
+                break
+                
                 if item['awardTd'].replace('-','').strip():
                     self.save(item)
 

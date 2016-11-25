@@ -17,7 +17,7 @@ class BaseModel(Model):
         database = db
   
 class CpModel(BaseModel):   
-    id = PrimaryKeyField(null=False, verbose_name='id')
+    id = IntegerField(primary_key=True, verbose_name='id')
     tic_date = CharField(max_length=8, verbose_name='日期')
     w_wan = IntegerField(verbose_name='1')
     w_qian = IntegerField(verbose_name='2')
